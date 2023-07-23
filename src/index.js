@@ -35,6 +35,7 @@ fastify.get(
 (async () => {
   try {
     await fastify.listen({ port: 3000, host: "0.0.0.0" });
+    console.log("listening on port " + port);
   } catch (error) {
     fastify.log.error(error);
     process.exit(1);
