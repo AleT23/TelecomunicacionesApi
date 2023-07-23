@@ -18,7 +18,7 @@ fastify.get(
       (section) => section.id === Number(request.params.sectionId)
     );
 
-    if (section) {
+    if (!section) {
       return reply.code(404).send(new Error("Section not found"));
     }
 
