@@ -1,6 +1,7 @@
 const fastify = require("fastify")({ logger: true });
 const blogsJson = require("./blogs.json");
 
+const port = 3000;
 // Declare a route
 fastify.get("/sections", function handler(request, reply) {
   reply.send(blogsJson);
@@ -34,7 +35,7 @@ fastify.get(
 
 (async () => {
   try {
-    await fastify.listen({ port: 3000, host: "0.0.0.0" });
+    await fastify.listen({ port, host: "0.0.0.0" });
     console.log("listening on port " + port);
   } catch (error) {
     fastify.log.error(error);
