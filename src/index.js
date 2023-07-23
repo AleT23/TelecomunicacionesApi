@@ -5,6 +5,9 @@ const blogsJson = require("./blogs.json");
 fastify.get("/sections", function handler(request, reply) {
   reply.send(blogsJson);
 });
+fastify.get("/", function handler(request, reply) {
+  reply.code(200).send({ hello: "ok" });
+});
 
 fastify.get(
   "/sections/:sectionId/blogs/:blogId",
