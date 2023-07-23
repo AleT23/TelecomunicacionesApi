@@ -7,7 +7,7 @@ fastify.get("/sections", function handler(request, reply) {
 });
 
 fastify.get(
-  "/section/:sectionId/blogs/:blogId",
+  "/sections/:sectionId/blogs/:blogId",
   function handler(request, reply) {
     const section = blogsJson.sections.find(
       (section) => section.id === Number(request.params.sectionId)
